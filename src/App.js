@@ -41,84 +41,128 @@ I will call this function in the input as onChange={this.userInput}
       message = <div className="  text-success display-1">You Won</div>;
     } else if (this.state.number === 0) {
       message = <div className=" text-primary display-4"> JUST DO IT </div>;
-    } else if (this.state.number === this.state.correctNumber + 10) {
+    } /* else if (
+      this.state.number <= this.state.correctNumber + 10 ||
+      this.state.number >= this.state.correctNumber - 10
+    ) {
       message = (
-        <div className="text-warning">you are close try lower number</div>
+        <div className="text-warning">
+          you are close within 10 lower or higher
+        </div>
       );
-    } else if (this.state.number === this.state.correctNumber + 9) {
+    } */ else if (
+      this.state.number ===
+      this.state.correctNumber + 9
+    ) {
       message = (
-        <div className="text-warning">you are close try lower number </div>
+        <div className="text-warning display-4 ">
+          you are close try lower number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 8) {
       message = (
-        <div className="text-warning">you are close try lower number</div>
+        <div className="text-warning display-4">
+          you are close try lower number
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 7) {
       message = (
-        <div className="text-warning">you are close try lower number</div>
+        <div className="text-warning display-4">
+          you are close try lower number
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 6) {
       message = (
-        <div className="text-warning">you are close try lower number </div>
+        <div className="text-warning display-4">
+          you are close try lower number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 5) {
       message = (
-        <div className="text-warning">you are close try lower number </div>
+        <div className="text-warning display-4">
+          you are close try lower number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 4) {
       message = (
-        <div className="text-warning">you are close try lower number </div>
+        <div className="text-warning display-4">
+          you are close try lower number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 3) {
       message = (
-        <div className="text-warning">You Almost there dont give up</div>
+        <div className="text-warning display-4">
+          You Almost there dont give up
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 2) {
       message = (
-        <div className="text-warning">Next guess is your last Chance </div>
+        <div className="text-warning display-4">
+          Next guess is your last Chance{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber + 1) {
-      message = <div className="text-warning">One last Chance </div>;
+      message = <div className="text-warning display-4">One last Chance </div>;
     } else if (this.state.number === this.state.correctNumber - 10) {
       message = (
-        <div className="text-warning">you are close try higher number</div>
+        <div className="text-warning display-4">
+          you are close try higher number
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 9) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 8) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 7) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 6) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 5) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 4) {
       message = (
-        <div className="text-warning">you are close try higher number </div>
+        <div className="text-warning display-4">
+          you are close try higher number{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 3) {
       message = (
-        <div className="text-warning">You Almost there dont give up </div>
+        <div className="text-warning display-4">
+          You Almost there dont give up{" "}
+        </div>
       );
     } else if (this.state.number === this.state.correctNumber - 2) {
-      message = <div className="text-warning">You Almost there</div>;
+      message = <div className="text-warning display-4">You Almost there</div>;
     } else if (this.state.number === this.state.correctNumber - 1) {
       message = (
-        <div className="text-warning ">Next guess is your last Chance </div>
+        <div className="text-warning  display-4">
+          Next guess is your last Chance{" "}
+        </div>
       );
     } else {
-      message = <div className="text-danger">Try again that's not close</div>;
+      message = (
+        <div className="text-danger display-4">Try again that's not close</div>
+      );
     }
     return (
       <div className="App">
@@ -161,19 +205,26 @@ I will call this function in the input as onChange={this.userInput}
                 </div>
                 <div>{message}</div>
                 <br />
-                <button
-                  onClick={this.restartTheGame}
-                  type="button"
-                  className="btn btn-outline-danger btn btn-warrning   btn-lg btn-block  align-top text-center Bold text"
-                >
-                  Restart !!!
-                </button>
+
+                <div>
+                  {this.state.number === this.state.correctNumber ? (
+                    <button
+                      onClick={this.restartTheGame}
+                      type="button"
+                      className="btn btn-outline-danger btn btn-warrning   btn-lg btn-block  align-top text-center Bold text"
+                    >
+                      Restart !!!
+                    </button>
+                  ) : (
+                    <h1 className=""> Just Guess It </h1>
+                  )}
+                </div>
               </div>
             </div>
           )}{" "}
           <br />
           <br />
-          <div> githup halmogbl </div>
+          <div> github halmogbl </div>
           <div>fork it (download it) and play it </div>
           <div> All rights are reserverd to Hamad Almogbl </div>
         </header>
