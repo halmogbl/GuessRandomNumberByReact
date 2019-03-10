@@ -4,23 +4,9 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 60vmin;
   pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  padding: 5px;
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +16,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-image: url("https://preview.redd.it/42d39umgj4n01.jpg?width=960&crop=smart&auto=webp&s=8a42fcff637328f6c2f6a0964e2fad48003e2cde");
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.won-logo {
+  animation: won-logo-spin infinite 5s linear;
+  height: -100vmin;
+  pointer-events: none;
+  font-size: calc(100px + 0vmin);
+}
+
+@keyframes won-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.zoom {
+  padding: 10px;
+
+  transition: transform 0.2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(
+    2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
