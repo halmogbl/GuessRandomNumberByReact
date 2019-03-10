@@ -21,7 +21,7 @@ I will call this function in the input as onChange={this.userInput}
   };
 
   restartTheGame = () => {
-    this.setState({ correctNumber: null });
+    this.setState({ correctNumber: null, number: 0 });
   };
 
   stoppedTyping = () => {
